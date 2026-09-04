@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "WAHAP",
+    "slug": "wahap-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#07090e"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.wahap.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "WAHAP needs camera access to scan event and venue QR codes.",
+        "NSPhotoLibraryUsageDescription": "WAHAP needs photo library access to upload event banners and layouts."
+      }
+    },
+    "android": {
+      "package": "com.wahap.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#07090e",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
