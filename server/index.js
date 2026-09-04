@@ -10,21 +10,13 @@ const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  "http://localhost:3000",
-  "http://localhost",
-  "capacitor://localhost",
-  "ionic://localhost"
-].filter(Boolean);
-
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps, curl, Postman)
-    if (!origin || allowedOrigins.includes(origin) || origin.startsWith("http://localhost:") || origin.startsWith("http://10.0.2.2:") || origin.startsWith("http://192.168.")) {
+    // Allow requests with no origin (like native mobile apps, curl, Postman)
+    if (!origin || origin.startsWith("http://localhost:") || origin.startsWith("http://10.0.2.2:") || origin.startsWith("http://192.168.") || origin.startsWith("https://")) {
       return callback(null, true);
     }
-    callback(null, true); // Permissive for hybrid mobile app connectivity
+    callback(null, true);
   },
   credentials: true
 }));

@@ -25,11 +25,10 @@ rl.question("📋 Ask your team lead for the MONGODB_URI connection string:\n> "
   }
 
   const envContent = `# Created by setup.js - Team database connection
-# ⚠️ NEVER commit this file to git (it contains sensitive credentials)
+# NEVER commit this file to git (it contains sensitive credentials)
 MONGODB_URI=${mongodbUri.trim()}
 PORT=5000
 NODE_ENV=production
-FRONTEND_URL=http://localhost:3000
 `;
 
   fs.writeFileSync(envPath, envContent);
