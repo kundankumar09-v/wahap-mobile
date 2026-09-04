@@ -3,6 +3,7 @@
 .env.local
 .env.*.local
 .env.production
+!.env.example
 
 # OS files
 .DS_Store
@@ -12,13 +13,11 @@ Thumbs.db
 
 # Dependencies
 node_modules/
-package-lock.json
-yarn.lock
 
 # Build outputs
 dist/
 build/
-.next/
+.expo/
 
 # Logs
 *.log

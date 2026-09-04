@@ -1,19 +1,17 @@
 {
-  "name": "iompproject",
+  "name": "wahap",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "WAHAP - Native Mobile Event & Venue Management Platform",
+  "private": true,
   "scripts": {
-    "mobile": "npm --prefix mobile start",
     "server": "npm --prefix server start",
-    "client": "npm --prefix client start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "mobile": "npm --prefix mobile start",
+    "start:all": "concurrently \"npm run server\" \"npm run mobile\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "mongodb": "^7.1.1"
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
