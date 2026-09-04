@@ -1,0 +1,108 @@
+/* Mobile Bottom Navigation */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: rgba(11, 15, 25, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 0.72rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    flex: 1;
+    padding: 6px 0;
+    gap: 3px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav-item:hover,
+  .bottom-nav-item.active {
+    color: #38bdf8;
+  }
+
+  .bottom-nav-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .bottom-nav-item.active .bottom-nav-icon-wrap {
+    transform: translateY(-2px);
+  }
+
+  .bottom-nav-icon {
+    font-size: 1.25rem;
+    transition: filter 0.2s ease;
+  }
+
+  .bottom-nav-item.active .bottom-nav-icon {
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+  }
+
+  .bottom-nav-label {
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  /* Raised Scan QR Action Button in Center */
+  .bottom-nav-item.qr-item {
+    position: relative;
+    top: -10px;
+  }
+
+  .qr-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(56, 189, 248, 0.45);
+    border: 3px solid #0b0f19;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .bottom-nav-item.qr-item:active .qr-circle {
+    transform: scale(0.92);
+  }
+
+  .qr-icon {
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
+
+  .admin-icon {
+    color: #f59e0b;
+  }
+
+  .bottom-nav-item.active .admin-icon {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
+  }
+}
