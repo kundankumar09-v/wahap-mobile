@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: wahap-server
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://patelanusree03_db_user:dEjR.mi.j.PF96Y@wahap.zgnz6r6.mongodb.net/wahap?retryWrites=true&w=majority
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
